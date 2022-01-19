@@ -29,6 +29,8 @@ public class BirthdayCalculator {
     public static String calculateDay(String bday) throws ParseException {
         // Changing string to a date format.
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+
+        // Format to get the day of week.
         SimpleDateFormat sdf1 = new SimpleDateFormat("EEEE");
 
         // Parse and formatting the string using the simple date format created.
@@ -61,6 +63,8 @@ public class BirthdayCalculator {
 
         // Changing string to a format I want.
         SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yyyy");
+
+        // Format to get the day of week.
         SimpleDateFormat sdf3 = new SimpleDateFormat("EEEE");
 
         // Parse and formatting the string using the simple date format created.

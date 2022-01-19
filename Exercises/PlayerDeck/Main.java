@@ -1,5 +1,6 @@
 package PlayerDeck;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -34,20 +35,29 @@ public class Main {
                             System.out.println("How many cards do you want to draw from your deck? 0 - " + " "
                                     + myDeck.getSize() + " : ");
                             int draw = sc.nextInt();
-                            if (draw > myDeck.getSize()) {
-                                throw new ArrayIndexOutOfBoundsException();
+                            if (draw > 0) {
+                                if (draw > myDeck.getSize()) {
+                                    throw new ArrayIndexOutOfBoundsException();
+                                }
+                                // Draw cards.
+                                myDeck.drawCards(draw);
+
+                                // Play cards.
+                                myDeck.playHand(draw);
+                            } else if (draw == 0) {
+                                System.out.println("You need to draw!");
+                            } else if (draw < 0) {
+                                System.out.println("Please enter a number betwwen 0 - "
+                                        + myDeck.getSize());
+                            } else {
+                                throw new InputMismatchException();
                             }
-                            // Draw cards.
-                            myDeck.drawCards(draw);
 
-                            // Play cards.
-                            myDeck.playHand(draw);
-
-                        } catch (ArrayIndexOutOfBoundsException e) {
-                           System.out.println("You can't draw more cards than your deck!");
+                        } catch (ArrayIndexOutOfBoundsException | InputMismatchException e) {
+                            System.out.println("You can only enter positive integer!");
+                            sc.next();
                         }
                     }
-
                     break;
 
                 // When user doesn't want to play the game:
@@ -59,7 +69,7 @@ public class Main {
 
                 // When user inputs other than y/n, prompt the user to input the choices correctly again.
                 default:
-                    System.out.println("Enter either Y or N.\n");
+                    System.out.println("\nEnter either Y or N.\n");
                     break;
             }
         } while (menu);
