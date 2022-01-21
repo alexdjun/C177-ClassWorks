@@ -1,0 +1,1 @@
+SELECT firstname, lastname, city FROM Client WHERE City IN ('Metairie', 'Kenner', 'Gretna');

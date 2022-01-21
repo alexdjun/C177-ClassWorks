@@ -1,0 +1,1 @@
+SELECT firstname, lastname FROM Client WHERE Birthdate IS NULL

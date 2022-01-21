@@ -1,0 +1,1 @@
+SELECT * FROM Client WHERE City = 'Metairie';

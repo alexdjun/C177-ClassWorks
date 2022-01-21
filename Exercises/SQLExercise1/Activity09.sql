@@ -1,0 +1,1 @@
+SELECT firstname, lastname, birthdate FROM Client WHERE birthdate >= '1980-01-01' AND birthdate < '1990-01-01';

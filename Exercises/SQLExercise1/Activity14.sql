@@ -1,0 +1,1 @@
+SELECT name FROM ExerciseCategory WHERE ParentCategoryId IS NOT NULL

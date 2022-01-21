@@ -1,0 +1,2 @@
+ALTER TABLE InvoiceLineItem ADD line_item_total FLOAT AS (price * quantity);
+SELECT invoiceid, description, price, quantity, line_item_total FROM InvoiceLineItem WHERE line_item_total BETWEEN 15 AND 25 

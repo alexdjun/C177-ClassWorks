@@ -1,0 +1,1 @@
+SELECT name, levelid FROM Workout
